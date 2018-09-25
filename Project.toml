@@ -1,0 +1,7 @@
+name = "Epi"
+uuid = "e4516f1e-c0af-11e8-1ab8-d168c3c2789d"
+authors = ["Kinh <nguyenkinh@ytecongcong.com>"]
+version = "0.1.0"
+
+[deps]
+NamedArrays = "86f7a689-2022-50b4-a561-43c23ac3c673"
