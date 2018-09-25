@@ -1,7 +1,13 @@
 
 <a id='Example.jl-Documentation-1'></a>
 
-# Example.jl Documentation
+# Epi.jl Documentation
+
+> Amassing functions, not mature...
+
+Short-term plan:
+
+- Functions for 2x2 table (add chi-square, Fisher, M-H, Kappa... from e.g., `HypothesisTests.jl`. Design-specific methods e.g., case-control/Cohort, case-cohort, matched case-control. ROC and epidemic curve.
 
 <a id='Epi.crossTable-Tuple{Any,Any}' href='#Epi.crossTable-Tuple{Any,Any}'>#</a>
 **`Epi.crossTable`** &mdash; *Method*.
