@@ -1,11 +1,10 @@
 module Epi
 
-using NamedArray
+using NamedArrays
 
+include("Utils.jl")
 include("crossTable.jl")
-# crossTable(copd[:ageonset], copd[:gender])
-# crossTable(copd[:gender], copd[:ageonset])
 
-export crossTable
+export crossTable, crossCount, colSum, rowSum
 
-end # module
+end

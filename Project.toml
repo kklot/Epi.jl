@@ -4,4 +4,5 @@ authors = ["Kinh <nguyenkinh@ytecongcong.com>"]
 version = "0.1.0"
 
 [deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 NamedArrays = "86f7a689-2022-50b4-a561-43c23ac3c673"
