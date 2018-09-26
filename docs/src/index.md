@@ -1,4 +1,4 @@
-# Example.jl Documentation
+# Epi.jl Documentation
 
 ```@docs
 crossTable(x, y; row=true, column=false)
