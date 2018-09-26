@@ -3,7 +3,7 @@ repo_url:         https://github.com/kklot/Epi.jl
 site_description: Julia package for epidemiologists (alpha).
 site_author:      Van Kinh Nguyen
 
-theme: material
+theme: readthedocs
 
 extra:
   palette:
