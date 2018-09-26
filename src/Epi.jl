@@ -5,6 +5,7 @@ using NamedArrays
 include("Utils.jl")
 include("crossTable.jl")
 
-export crossTable, crossCount, colSum, rowSum
+export crossTable
+export colSum, rowSum, removeMissing, unlist
 
 end
