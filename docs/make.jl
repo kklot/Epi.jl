@@ -11,6 +11,8 @@ makedocs(
 deploydocs(
     repo = "github.com/kklot/Epi.jl.git",
     target = "build",
+    branch = "gh-pages",
+    latest = "master",
     deps = nothing,
     make = nothing,
     julia = "1.0",
