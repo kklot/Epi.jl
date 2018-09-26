@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Example.jl Documentation\n\n\n#\n\n\nEpi.crossTable\n \n \nMethod\n.\n\n\ncrossTable(x, y; row=true, column=false)\n\n\n\n\n\nMake cross-tabulation table between arrays \nx\n and \ny\n. \n\n\nOptional \nrow\n and \ncolumn\n report row and column percentage respectively (not yet implemented).\n\n\nReturn table of complete cases only, i.e., missing values are removed.\n\n\nsource\n\n\n#\n\n\nEpi.colSum\n \n \nMethod\n.\n\n\ncolSum(A)\n\n\n\n\n\nCalculate column sum for two dimensional array \nA\n.\n\n\n\n\nUntil a better comes...\n\n\n\n\nsource\n\n\n#\n\n\nEpi.rowSum\n \n \nMethod\n.\n\n\nrowSum(A)\n\n\n\n\n\nCalculate row sum for two dimensional array \nA\n.\n\n\n\n\nUntil a better comes...\n\n\n\n\nsource\n\n\n#\n\n\nEpi.removeMissing\n \n \nMethod\n.\n\n\nremoveMissing(A; cols=missing)\n\n\n\n\n\nRemoving missing values in an array \nA\n. By default remove all rows with missing values in \nany of the columns\n. Otherwise removing only missing data only in those columns specified by \ncols\n.\n\n\nReturn the modified \nA\n.\n\n\nsource\n\n\n#\n\n\nEpi.unlist\n \n \nMethod\n.\n\n\nunlist(A; unify=false)\n\n\nR's style 'unlist''. \nA\n can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).\n\n\nunify=true\n wraps the result in the \nunique()\n function before return.\n\n\nsource", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#examplejl-documentation", 
+            "text": "#  Epi.crossTable     Method .  crossTable(x, y; row=true, column=false)  Make cross-tabulation table between arrays  x  and  y .   Optional  row  and  column  report row and column percentage respectively (not yet implemented).  Return table of complete cases only, i.e., missing values are removed.  source  #  Epi.colSum     Method .  colSum(A)  Calculate column sum for two dimensional array  A .   Until a better comes...   source  #  Epi.rowSum     Method .  rowSum(A)  Calculate row sum for two dimensional array  A .   Until a better comes...   source  #  Epi.removeMissing     Method .  removeMissing(A; cols=missing)  Removing missing values in an array  A . By default remove all rows with missing values in  any of the columns . Otherwise removing only missing data only in those columns specified by  cols .  Return the modified  A .  source  #  Epi.unlist     Method .  unlist(A; unify=false)  R's style 'unlist''.  A  can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).  unify=true  wraps the result in the  unique()  function before return.  source", 
+            "title": "Example.jl Documentation"
+        }
+    ]
+}
