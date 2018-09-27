@@ -7,7 +7,7 @@ include("crossTable.jl")
 include("ORPRRR.jl")
 
 export crossTable
-export colSum, rowSum, removeMissing, unlist
+export removeMissing, unlist
 export oddsratio, riskratio
 
 end

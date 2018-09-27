@@ -7,28 +7,6 @@ function crossCount(i, j, data) # Look, data dependent
 end
 
 """
-    colSum(A)
-
-Calculate column sum for two dimensional array `A`.
-
-> Until a better comes...
-"""
-function colSum(A)
-	[sum(A[i,:]) for i in 1:size(A, 1)]
-end
-
-"""
-    rowSum(A)
-
-Calculate row sum for two dimensional array `A`.
-
-> Until a better comes...
-"""
-function rowSum(A)
-	[sum(A[:,i]) for i in 1:size(A, 2)]
-end
-
-"""
     removeMissing(A; cols=missing)
 
 Removing missing values in an array `A`. By default remove all rows with missing values in **any of the columns**. Otherwise removing only missing data only in those columns specified by `cols`.

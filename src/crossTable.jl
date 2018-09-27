@@ -17,8 +17,8 @@ function crossTable(x, y; row=true, column=false)
 	for i in 1:nr, j in 1:nc
 		A[i, j] = crossCount(xx[i], yy[j], data)
 	end
- 	A = hcat(A, colSum(A))
- 	A = vcat(A, transpose(rowSum(A)))
+ 	A = hcat(A, sum(A, dims=2))
+ 	A = vcat(A, sum(A, dims=1) )
 	setnames!(A, push!(string.(xx), string("Total")), 1)
 	setnames!(A, push!(string.(yy), string("Total")), 2)
 	A
