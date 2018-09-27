@@ -1,6 +1,6 @@
 # Epi.jl Documentation
 
-> Amassing functions, not mature...
+This is an unregistered package. It doesn't have any tests.
 
 The lastest documentation can be found here, tons of things to work on 
 
