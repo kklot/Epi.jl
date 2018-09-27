@@ -9,7 +9,7 @@ end
 """
     removeMissing(A; cols=missing)
 
-Removing missing values in an array `A`. By default remove all rows with missing values in **any of the columns**. Otherwise removing only missing data only in those columns specified by `cols`.
+Removing missing values in an array `A`. By default remove all rows with missing values in **any of the columns**. Otherwise removing only missing data only in those columns specified by `cols`. `A` can be `R x 1` as well.
 
 Return the modified `A`.
 """
@@ -31,4 +31,18 @@ function unlist(A; unify=false)
 	foo = Vector()
 	for i in eachindex(A) append!(foo, A[i]) end
 	unify ? unique(foo) : foo
+end
+
+"""
+    removeNaN(A; cols=missing)
+
+Removing non number values (`NaN`) in an array `A`. By default remove all rows with missing values in **any of the columns**. Otherwise removing only missing data only in those columns specified by `cols`. `A` can be `R x 1` as well
+
+Return the modified `A`.
+"""
+function removeNaN(A; cols=missing)
+	if ismissing(cols) cols=1:size(A, 2) end
+	rowMissing = collect([findall(isnan, A[:, i]) for i in cols])
+	rowMissing = unlist(rowMissing, unify=true)
+	A[setdiff(1:size(A, 1), rowMissing), :]
 end

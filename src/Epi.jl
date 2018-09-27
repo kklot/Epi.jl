@@ -8,7 +8,7 @@ include("ORPRRR.jl")
 include("chisquare.jl")
 
 export crossTable
-export removeMissing, unlist
+export removeMissing, removeNaN, unlist
 export oddsratio, riskratio
 export chisquaretest
 
