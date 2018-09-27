@@ -76,7 +76,16 @@
 
 
 <p>calculate chi-square statistic and the p-value of a two-way Row x Colums. <code>A</code> is a matrix return from <code>crossTable</code> (which includes row total and column total).</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/chisquare.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p>The following statistics are reported</p>
+<ul>
+<li>Expectation values table</li>
+<li>Chi-Square Test</li>
+<li>Likelihood-ratio test</li>
+<li>Continuity-Adjusted Chi-Square Test</li>
+<li>Mantel-Haenszel Chi-Square Test (not implemented)</li>
+<li>Fisher’s Exact Test (not implemented)</li>
+</ul>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/chisquare.jl#L1-L15' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.crossTable-Tuple{Any,Any}' href='#Epi.crossTable-Tuple{Any,Any}'>#</a>
 <strong><code>Epi.crossTable</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>crossTable(x, y; row=true, column=false)
@@ -86,7 +95,7 @@
 <p>Make cross-tabulation table between arrays <code>x</code> and <code>y</code>. </p>
 <p>Optional <code>row</code> and <code>column</code> report row and column percentage respectively (not yet implemented).</p>
 <p>Return table of complete cases only, i.e., missing values are removed.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/crossTable.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/crossTable.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.oddsratio-NTuple{4,Any}' href='#Epi.oddsratio-NTuple{4,Any}'>#</a>
 <strong><code>Epi.oddsratio</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>oddsratio(a, b, c, d; alpha=.05, exact=false)
@@ -109,16 +118,25 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/ORPRRR.jl#L1-L27' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/ORPRRR.jl#L1-L27' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.removeMissing-Tuple{Any}' href='#Epi.removeMissing-Tuple{Any}'>#</a>
 <strong><code>Epi.removeMissing</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>removeMissing(A; cols=missing)
 </pre></div>
 
 
-<p>Removing missing values in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>.</p>
+<p>Removing missing values in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>. <code>A</code> can be <code>R x 1</code> as well.</p>
 <p>Return the modified <code>A</code>.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/Utils.jl#L9-L15' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/Utils.jl#L9-L15' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.removeNaN-Tuple{Any}' href='#Epi.removeNaN-Tuple{Any}'>#</a>
+<strong><code>Epi.removeNaN</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>removeNaN(A; cols=missing)
+</pre></div>
+
+
+<p>Removing non number values (<code>NaN</code>) in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>. <code>A</code> can be <code>R x 1</code> as well</p>
+<p>Return the modified <code>A</code>.</p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/Utils.jl#L36-L42' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.riskratio-NTuple{4,Any}' href='#Epi.riskratio-NTuple{4,Any}'>#</a>
 <strong><code>Epi.riskratio</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>riskratio(a, b, c, d; alpha=.05)
@@ -141,7 +159,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/ORPRRR.jl#L41-L66' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/ORPRRR.jl#L41-L66' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.unlist-Tuple{Any}' href='#Epi.unlist-Tuple{Any}'>#</a>
 <strong><code>Epi.unlist</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>unlist(A; unify=false)
@@ -150,14 +168,14 @@
 
 <p>R's style 'unlist''. <code>A</code> can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).</p>
 <p><code>unify=true</code> wraps the result in the <code>unique()</code> function before return.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/Utils.jl#L23-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/Utils.jl#L23-L29' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.crossCount-Tuple{Any,Any,Any}' href='#Epi.crossCount-Tuple{Any,Any,Any}'>#</a>
 <strong><code>Epi.crossCount</code></strong> &mdash; <em>Method</em>.</p>
 <p>Function to count for a cross-table for Epi package.</p>
 <blockquote>
 <p>Internal</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/5222a44b2ab6d0b169ed539e83f4273e7da8457b/src/Utils.jl#L1-L4' class='documenter-source'>source</a><br></p></div>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/ff21b25bf8a7812a2f618cb75fadc0bdf21fa53d/src/Utils.jl#L1-L4' class='documenter-source'>source</a><br></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -241,5 +259,5 @@
 
 <!--
 MkDocs version : 0.17.5
-Build Date UTC : 2018-09-27 22:07:20
+Build Date UTC : 2018-09-27 23:38:11
 -->
