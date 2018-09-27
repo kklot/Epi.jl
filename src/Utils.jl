@@ -43,7 +43,7 @@ function removeMissing(A; cols=missing)
 end
 
 """
-  unlist(A; unify=false)
+    unlist(A; unify=false)
 
 R's style 'unlist''. `A` can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).
 

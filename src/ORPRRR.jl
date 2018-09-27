@@ -1,5 +1,5 @@
 """
-    oddsratio(a, b, c, d, alpha=.05, exact=false)	
+    oddsratio(a, b, c, d; alpha=.05, exact=false)	
 
 Calculate odds ratio of 2x2 table (Case-Control Studies).
 
@@ -39,7 +39,7 @@ function oddsratio(a, b, c, d; alpha=0.05, exact=false)
 end
 
 """
-    riskratio(a, b, c, d, alpha=.05)	
+    riskratio(a, b, c, d; alpha=.05)	
 
 Calculate risk ratio (RR) of 2x2 table; this can also be used for calculating prevalence ratio (PR).
 
