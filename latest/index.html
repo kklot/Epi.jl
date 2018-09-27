@@ -69,14 +69,109 @@
 
 <p><a id='Epi.jl-Documentation-1'></a></p>
 <h1 id="epijl-documentation">Epi.jl Documentation</h1>
+<p><a id='Epi.colSum-Tuple{Any}' href='#Epi.colSum-Tuple{Any}'>#</a>
+<strong><code>Epi.colSum</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>colSum(A)
+</pre></div>
+
+
+<p>Calculate column sum for two dimensional array <code>A</code>.</p>
+<blockquote>
+<p>Until a better comes...</p>
+</blockquote>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/Utils.jl#L9-L15' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.crossTable-Tuple{Any,Any}' href='#Epi.crossTable-Tuple{Any,Any}'>#</a>
+<strong><code>Epi.crossTable</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>crossTable(x, y; row=true, column=false)
-oddsratio(a, b, c, d, alpha=.05, exact=false)
-riskratio(a, b, c, d, alpha=.05)
-colSum(A)
-rowSum(A)
-removeMissing(A; cols=missing)
-unlist(A; unify=false)
-</pre></div></div>
+</pre></div>
+
+
+<p>Make cross-tabulation table between arrays <code>x</code> and <code>y</code>. </p>
+<p>Optional <code>row</code> and <code>column</code> report row and column percentage respectively (not yet implemented).</p>
+<p>Return table of complete cases only, i.e., missing values are removed.</p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/crossTable.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.oddsratio-NTuple{4,Any}' href='#Epi.oddsratio-NTuple{4,Any}'>#</a>
+<strong><code>Epi.oddsratio</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>oddsratio(a, b, c, d; alpha=.05, exact=false)
+</pre></div>
+
+
+<p>Calculate odds ratio of 2x2 table (Case-Control Studies).</p>
+<p>Exact method is not implemented.</p>
+<p>|             | case | non-cases |         | |:––––––|:––-|:–––––|:––––| | exposed     | a    | b         | a+b     | | non-exposed | c    | d         | c+d     | |             | a+c  | b+d       | a+b+c+d |</p>
+<p><strong>Example outputs</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="mi">2</span><span class="n">×2</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">Exposed</span> <span class="n">╲</span> <span class="n">Case</span> <span class="n">│</span>  <span class="o">+</span>   <span class="o">-</span>
+<span class="n">───────────────┼───────</span>
+<span class="o">+</span>              <span class="n">│</span> <span class="mi">25</span>  <span class="mi">12</span>
+<span class="o">-</span>              <span class="n">│</span>  <span class="mi">9</span>  <span class="mi">69</span>
+<span class="mi">1</span><span class="n">×3</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+      <span class="n">╲</span>  <span class="n">│</span>      <span class="n">OR</span>    <span class="n">lower</span>    <span class="n">upper</span>
+<span class="n">─────────┼──────────────────────────</span>
+<span class="n">OR</span> <span class="mi">95</span><span class="o">%</span><span class="n">CI</span> <span class="n">│</span> <span class="mf">15.9722</span>  <span class="mf">6.00717</span>  <span class="mf">42.4679</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/ORPRRR.jl#L1-L27' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.removeMissing-Tuple{Any}' href='#Epi.removeMissing-Tuple{Any}'>#</a>
+<strong><code>Epi.removeMissing</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>removeMissing(A; cols=missing)
+</pre></div>
+
+
+<p>Removing missing values in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>.</p>
+<p>Return the modified <code>A</code>.</p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/Utils.jl#L31-L37' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.riskratio-NTuple{4,Any}' href='#Epi.riskratio-NTuple{4,Any}'>#</a>
+<strong><code>Epi.riskratio</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>riskratio(a, b, c, d; alpha=.05)
+</pre></div>
+
+
+<p>Calculate risk ratio (RR) of 2x2 table; this can also be used for calculating prevalence ratio (PR).</p>
+<p>|             | case | non-cases |         | |:––––––|:––-|:–––––|:––––| | exposed     | a    | b         | a+b     | | non-exposed | c    | d         | c+d     | |             | a+c  | b+d       | a+b+c+d |</p>
+<p><strong>Example outputs</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">riskratio</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span><span class="mi">355</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">965</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">2</span><span class="n">×2</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">Exposed</span> <span class="n">╲</span> <span class="n">Case</span> <span class="n">│</span>   <span class="o">+</span>    <span class="o">-</span>
+<span class="n">───────────────┼─────────</span>
+<span class="o">+</span>              <span class="n">│</span> <span class="mi">122</span>  <span class="mi">355</span>
+<span class="o">-</span>              <span class="n">│</span>  <span class="mi">22</span>  <span class="mi">965</span>
+<span class="mi">1</span><span class="n">×3</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+        <span class="n">╲</span>  <span class="n">│</span>      <span class="n">RR</span>    <span class="n">lower</span>    <span class="n">upper</span>
+<span class="n">───────────┼──────────────────────────</span>
+<span class="n">RR</span> <span class="mf">99.0</span><span class="o">%</span><span class="n">CI</span> <span class="n">│</span> <span class="mf">11.4746</span>  <span class="mf">6.43047</span>  <span class="mf">20.4752</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/ORPRRR.jl#L41-L66' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.rowSum-Tuple{Any}' href='#Epi.rowSum-Tuple{Any}'>#</a>
+<strong><code>Epi.rowSum</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>rowSum(A)
+</pre></div>
+
+
+<p>Calculate row sum for two dimensional array <code>A</code>.</p>
+<blockquote>
+<p>Until a better comes...</p>
+</blockquote>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/Utils.jl#L20-L26' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.unlist-Tuple{Any}' href='#Epi.unlist-Tuple{Any}'>#</a>
+<strong><code>Epi.unlist</code></strong> &mdash; <em>Method</em>.</p>
+<div class="codehilite"><pre><span></span>unlist(A; unify=false)
+</pre></div>
+
+
+<p>R's style 'unlist''. <code>A</code> can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).</p>
+<p><code>unify=true</code> wraps the result in the <code>unique()</code> function before return.</p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/Utils.jl#L45-L51' class='documenter-source'>source</a><br></p>
+<p><a id='Epi.crossCount-Tuple{Any,Any,Any}' href='#Epi.crossCount-Tuple{Any,Any,Any}'>#</a>
+<strong><code>Epi.crossCount</code></strong> &mdash; <em>Method</em>.</p>
+<p>Function to count for a cross-table for Epi package.</p>
+<blockquote>
+<p>Internal</p>
+</blockquote>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/dabaa24b7f34a1dc53613c31df6cf0e05e6042c9/src/Utils.jl#L1-L4' class='documenter-source'>source</a><br></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -160,5 +255,5 @@ unlist(A; unify=false)
 
 <!--
 MkDocs version : 0.17.5
-Build Date UTC : 2018-09-27 13:18:26
+Build Date UTC : 2018-09-27 13:29:10
 -->
