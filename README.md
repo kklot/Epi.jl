@@ -8,4 +8,15 @@ The lastest documentation can be found here, tons of things to work on
 
 Short-term plan:
 
-- Functions for 2x2 table (add chi-square, Fisher, M-H, Kappa... from e.g., `HypothesisTests.jl`. Design-specific methods e.g., case-control/Cohort, case-cohort, matched case-control. ROC and epidemic curve.
+- [x] Cross-tabulation table
+- [ ] Cross-tabulation table by groups
+- [ ] Cross-tabulation reporting chi-square/fisher/M-H
+- [x] Odd ratio and 95% CI
+- [x] Risk ratio and 95% CI
+- [ ] Odd/risk ratio exact
+- [ ] Matched case-control
+- [ ] Case cohort
+- [ ] ROC analyses
+- [ ] Epidemic curve
+- [ ] Life table
+- [ ] Kappa
