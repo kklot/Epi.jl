@@ -49,7 +49,7 @@ Calculate risk ratio (RR) of 2x2 table; this can also be used for calculating pr
 | non-exposed | c    | d         | c+d     |
 |             | a+c  | b+d       | a+b+c+d |
 
-## Exaple outputs
+## Example outputs
 
 ```julia
 julia> riskratio(122,355,22,965, alpha=0.01)
