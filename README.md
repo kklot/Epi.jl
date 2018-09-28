@@ -9,14 +9,10 @@ The lastest documentation can be found here, tons of things to work on
 Short-term plan:
 
 - [x] Cross-tabulation table
-- [ ] Cross-tabulation table by groups
-- [ ] Cross-tabulation reporting chi-square/fisher/M-H
+- [x] Cross-tabulation reporting chi-square statistics
 - [x] Odd ratio and 95% CI
 - [x] Risk ratio and 95% CI
-- [ ] Odd/risk ratio exact
-- [ ] Matched case-control
-- [ ] Case cohort
+- [ ] Cross-tabulation table by groups
 - [ ] ROC analyses
 - [ ] Epidemic curve
 - [ ] Life table
-- [ ] Kappa
