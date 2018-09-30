@@ -20,21 +20,24 @@ julia> gender = ["Female", "Male"][rand(1:2, 100)];
 
 julia> age = ["0-5", "6-10", "11-15"][rand(1:3, 100)];
 
-julia> tm_ = crossTable(age, gender, row=true);
-Frequency (row percentage)
-4×3 Named Array{Text{String},2}
-A ╲ B │         1          2          3
-──────┼────────────────────────────────
-1     │ 20 (0.57)  15 (0.43)   35 (1.0)
-2     │ 18 (0.56)  14 (0.44)   32 (1.0)
-3     │ 17 (0.52)  16 (0.48)   33 (1.0)
-4     │ 55 (0.55)  45 (0.45)  100 (1.0)
+julia> tm_ = crossTable(age, gender);
 
 julia> chisquaretest(tm_)
 Chi-square: 0.247 with 2 degrees of freedom
 	p-value: 0.8837
 Likelihood-ratio Chi-square: 0.2466 with 2 degrees of freedom
 	p-value: 0.8839
+===================================
+Expectation values table
+Frequency (expected value)
+
+-----------------------------------
+3×2 Named Array{Text{String},2}
+A ╲ B │       Male      Female
+──────┼───────────────────────
+11-15 │  16 (14.7)   14 (15.3)
+0-5   │ 15 (17.14)  20 (17.85)
+6-10  │ 18 (17.14)  17 (17.85)
 ```
 
 """
