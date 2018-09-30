@@ -1,7 +1,9 @@
 """
     oddsratio(a, b, c, d; alpha=.05, exact=false)	
+    oddsratio(A, B; alpha=.05, exact=false)	# todo
 
 Calculate odds ratio of 2x2 table (Case-Control Studies).
+If A, B are vectors, a two-way table is generated using `crossTable` and OR is calculated.
 
 Exact method is not implemented.
 
@@ -40,8 +42,11 @@ end
 
 """
     riskratio(a, b, c, d; alpha=.05)	
+    riskratio(A, B; alpha=.05, exact=false)	# todo
 
 Calculate risk ratio (RR) of 2x2 table; this can also be used for calculating prevalence ratio (PR).
+
+If A, B are vectors, a two-way table is generated using `crossTable` and RR is calculated.
 
 |             | case | non-cases |         |
 |:------------|:-----|:----------|:--------|

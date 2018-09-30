@@ -1,3 +1,9 @@
+#       _/   _/   _/      _/ Kinh Nguyen
+#      _/  _/    _/_/    _/  nguyenkinh@ytecongcong.com
+#     _/ _/     _/ _/   _/
+# TEXTS RUNNNING IN THE MIDDLE, NO, THIS IS NOT DEFAULT
+#   _/ _/     _/   _/ _/
+#  _/   _/   _/    _/_/
 """
 Function to count for a cross-table for Epi package.
 > Internal
