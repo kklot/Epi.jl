@@ -92,34 +92,37 @@
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;0-5&quot;</span><span class="p">,</span> <span class="s">&quot;6-10&quot;</span><span class="p">,</span> <span class="s">&quot;11-15&quot;</span><span class="p">][</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">tm_</span> <span class="o">=</span> <span class="n">crossTable</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">true</span><span class="p">);</span>
-<span class="n">Frequency</span> <span class="p">(</span><span class="n">row</span> <span class="n">percentage</span><span class="p">)</span>
-<span class="mi">4</span><span class="n">×3</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Text</span><span class="p">{</span><span class="n">String</span><span class="p">},</span><span class="mi">2</span><span class="p">}</span>
-<span class="n">A</span> <span class="n">╲</span> <span class="n">B</span> <span class="n">│</span>         <span class="mi">1</span>          <span class="mi">2</span>          <span class="mi">3</span>
-<span class="n">──────┼────────────────────────────────</span>
-<span class="mi">1</span>     <span class="n">│</span> <span class="mi">20</span> <span class="p">(</span><span class="mf">0.57</span><span class="p">)</span>  <span class="mi">15</span> <span class="p">(</span><span class="mf">0.43</span><span class="p">)</span>   <span class="mi">35</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">2</span>     <span class="n">│</span> <span class="mi">18</span> <span class="p">(</span><span class="mf">0.56</span><span class="p">)</span>  <span class="mi">14</span> <span class="p">(</span><span class="mf">0.44</span><span class="p">)</span>   <span class="mi">32</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">3</span>     <span class="n">│</span> <span class="mi">17</span> <span class="p">(</span><span class="mf">0.52</span><span class="p">)</span>  <span class="mi">16</span> <span class="p">(</span><span class="mf">0.48</span><span class="p">)</span>   <span class="mi">33</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">4</span>     <span class="n">│</span> <span class="mi">55</span> <span class="p">(</span><span class="mf">0.55</span><span class="p">)</span>  <span class="mi">45</span> <span class="p">(</span><span class="mf">0.45</span><span class="p">)</span>  <span class="mi">100</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">tm_</span> <span class="o">=</span> <span class="n">crossTable</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">);</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">chisquaretest</span><span class="p">(</span><span class="n">tm_</span><span class="p">)</span>
 <span class="n">Chi</span><span class="o">-</span><span class="n">square</span><span class="o">:</span> <span class="mf">0.247</span> <span class="n">with</span> <span class="mi">2</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">freedom</span>
     <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="o">:</span> <span class="mf">0.8837</span>
 <span class="n">Likelihood</span><span class="o">-</span><span class="n">ratio</span> <span class="n">Chi</span><span class="o">-</span><span class="n">square</span><span class="o">:</span> <span class="mf">0.2466</span> <span class="n">with</span> <span class="mi">2</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">freedom</span>
     <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="o">:</span> <span class="mf">0.8839</span>
+<span class="o">===================================</span>
+<span class="n">Expectation</span> <span class="n">values</span> <span class="n">table</span>
+<span class="n">Frequency</span> <span class="p">(</span><span class="n">expected</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="o">-----------------------------------</span>
+<span class="mi">3</span><span class="n">×2</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Text</span><span class="p">{</span><span class="n">String</span><span class="p">},</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">A</span> <span class="n">╲</span> <span class="n">B</span> <span class="n">│</span>       <span class="n">Male</span>      <span class="n">Female</span>
+<span class="n">──────┼───────────────────────</span>
+<span class="mi">11</span><span class="o">-</span><span class="mi">15</span> <span class="n">│</span>  <span class="mi">16</span> <span class="p">(</span><span class="mf">14.7</span><span class="p">)</span>   <span class="mi">14</span> <span class="p">(</span><span class="mf">15.3</span><span class="p">)</span>
+<span class="mi">0</span><span class="o">-</span><span class="mi">5</span>   <span class="n">│</span> <span class="mi">15</span> <span class="p">(</span><span class="mf">17.14</span><span class="p">)</span>  <span class="mi">20</span> <span class="p">(</span><span class="mf">17.85</span><span class="p">)</span>
+<span class="mi">6</span><span class="o">-</span><span class="mi">10</span>  <span class="n">│</span> <span class="mi">18</span> <span class="p">(</span><span class="mf">17.14</span><span class="p">)</span>  <span class="mi">17</span> <span class="p">(</span><span class="mf">17.85</span><span class="p">)</span>
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/chisquare.jl#L1-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/chisquare.jl#L1-L43' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.crossTable-Tuple{AbstractArray,AbstractArray}' href='#Epi.crossTable-Tuple{AbstractArray,AbstractArray}'>#</a>
 <strong><code>Epi.crossTable</code></strong> &mdash; <em>Method</em>.</p>
-<div class="codehilite"><pre><span></span>crossTable(x, y; row=true, column=false)
+<div class="codehilite"><pre><span></span>crossTable(x, y; row=true)
 </pre></div>
 
 
 <p>Make cross-tabulation table between arrays <code>x</code> and <code>y</code>. </p>
-<p>Optional <code>row</code> and <code>column</code> report row and column percentage respectively, <code>digits</code> specifies the digits use in <code>round</code> function.</p>
-<p>Return table of complete cases only, i.e., missing values are removed.</p>
+<p>Optional <code>row</code> report row percentage where <code>row=false</code> report column percentage, <code>digits</code> specifies the digits use in <code>round</code> function.</p>
+<p>Return table of complete cases only, i.e., missing values are removed. This table can be used as the input to <code>chisquaretest</code>, <code>oddsratio</code>, and <code>riskratio</code> functions.</p>
 <p><strong>Examples</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">Epi</span>
 
@@ -127,25 +130,29 @@
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;0-5&quot;</span><span class="p">,</span> <span class="s">&quot;6-10&quot;</span><span class="p">,</span> <span class="s">&quot;11-15&quot;</span><span class="p">][</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">tm_</span> <span class="o">=</span> <span class="n">crossTable</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">true</span><span class="p">);</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">tm_</span> <span class="o">=</span> <span class="n">crossTable</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">);</span>
 <span class="n">Frequency</span> <span class="p">(</span><span class="n">row</span> <span class="n">percentage</span><span class="p">)</span>
 <span class="mi">4</span><span class="n">×3</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Text</span><span class="p">{</span><span class="n">String</span><span class="p">},</span><span class="mi">2</span><span class="p">}</span>
-<span class="n">A</span> <span class="n">╲</span> <span class="n">B</span> <span class="n">│</span>         <span class="mi">1</span>          <span class="mi">2</span>          <span class="mi">3</span>
+<span class="n">A</span> <span class="n">╲</span> <span class="n">B</span> <span class="n">│</span>      <span class="n">Male</span>     <span class="n">Female</span>      <span class="n">Total</span>
 <span class="n">──────┼────────────────────────────────</span>
-<span class="mi">1</span>     <span class="n">│</span> <span class="mi">20</span> <span class="p">(</span><span class="mf">0.57</span><span class="p">)</span>  <span class="mi">15</span> <span class="p">(</span><span class="mf">0.43</span><span class="p">)</span>   <span class="mi">35</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">2</span>     <span class="n">│</span> <span class="mi">18</span> <span class="p">(</span><span class="mf">0.56</span><span class="p">)</span>  <span class="mi">14</span> <span class="p">(</span><span class="mf">0.44</span><span class="p">)</span>   <span class="mi">32</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">3</span>     <span class="n">│</span> <span class="mi">17</span> <span class="p">(</span><span class="mf">0.52</span><span class="p">)</span>  <span class="mi">16</span> <span class="p">(</span><span class="mf">0.48</span><span class="p">)</span>   <span class="mi">33</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="mi">4</span>     <span class="n">│</span> <span class="mi">55</span> <span class="p">(</span><span class="mf">0.55</span><span class="p">)</span>  <span class="mi">45</span> <span class="p">(</span><span class="mf">0.45</span><span class="p">)</span>  <span class="mi">100</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="mi">11</span><span class="o">-</span><span class="mi">15</span> <span class="n">│</span> <span class="mi">16</span> <span class="p">(</span><span class="mf">0.53</span><span class="p">)</span>  <span class="mi">14</span> <span class="p">(</span><span class="mf">0.47</span><span class="p">)</span>   <span class="mi">30</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="mi">0</span><span class="o">-</span><span class="mi">5</span>   <span class="n">│</span> <span class="mi">15</span> <span class="p">(</span><span class="mf">0.43</span><span class="p">)</span>  <span class="mi">20</span> <span class="p">(</span><span class="mf">0.57</span><span class="p">)</span>   <span class="mi">35</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="mi">6</span><span class="o">-</span><span class="mi">10</span>  <span class="n">│</span> <span class="mi">18</span> <span class="p">(</span><span class="mf">0.51</span><span class="p">)</span>  <span class="mi">17</span> <span class="p">(</span><span class="mf">0.49</span><span class="p">)</span>   <span class="mi">35</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">Total</span> <span class="n">│</span> <span class="mi">49</span> <span class="p">(</span><span class="mf">0.49</span><span class="p">)</span>  <span class="mi">51</span> <span class="p">(</span><span class="mf">0.51</span><span class="p">)</span>  <span class="mi">100</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">chisquaretest</span><span class="p">(</span><span class="n">tm_</span><span class="p">)</span>
-<span class="n">Chi</span><span class="o">-</span><span class="n">square</span><span class="o">:</span> <span class="mf">0.247</span> <span class="n">with</span> <span class="mi">2</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">freedom</span>
-    <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="o">:</span> <span class="mf">0.8837</span>
-<span class="n">Likelihood</span><span class="o">-</span><span class="n">ratio</span> <span class="n">Chi</span><span class="o">-</span><span class="n">square</span><span class="o">:</span> <span class="mf">0.2466</span> <span class="n">with</span> <span class="mi">2</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">freedom</span>
-    <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="o">:</span> <span class="mf">0.8839</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">tm_</span> <span class="o">=</span> <span class="n">crossTable</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">false</span><span class="p">);</span>
+<span class="n">Frequency</span> <span class="p">(</span><span class="n">column</span> <span class="n">percentage</span><span class="p">)</span>
+<span class="mi">4</span><span class="n">×3</span> <span class="n">Named</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Text</span><span class="p">{</span><span class="n">String</span><span class="p">},</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">A</span> <span class="n">╲</span> <span class="n">B</span> <span class="n">│</span>      <span class="n">Male</span>     <span class="n">Female</span>      <span class="n">Total</span>
+<span class="n">──────┼────────────────────────────────</span>
+<span class="mi">11</span><span class="o">-</span><span class="mi">15</span> <span class="n">│</span> <span class="mi">16</span> <span class="p">(</span><span class="mf">0.33</span><span class="p">)</span>  <span class="mi">14</span> <span class="p">(</span><span class="mf">0.27</span><span class="p">)</span>   <span class="mi">30</span> <span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="mi">0</span><span class="o">-</span><span class="mi">5</span>   <span class="n">│</span> <span class="mi">15</span> <span class="p">(</span><span class="mf">0.31</span><span class="p">)</span>  <span class="mi">20</span> <span class="p">(</span><span class="mf">0.39</span><span class="p">)</span>  <span class="mi">35</span> <span class="p">(</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="mi">6</span><span class="o">-</span><span class="mi">10</span>  <span class="n">│</span> <span class="mi">18</span> <span class="p">(</span><span class="mf">0.37</span><span class="p">)</span>  <span class="mi">17</span> <span class="p">(</span><span class="mf">0.33</span><span class="p">)</span>  <span class="mi">35</span> <span class="p">(</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="n">Total</span> <span class="n">│</span>  <span class="mi">49</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>   <span class="mi">51</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="mi">100</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/crossTable.jl#L1-L34' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/crossTable.jl#L1-L38' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.oddsratio-NTuple{4,Any}' href='#Epi.oddsratio-NTuple{4,Any}'>#</a>
 <strong><code>Epi.oddsratio</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>oddsratio(a, b, c, d; alpha=.05, exact=false)   
@@ -169,7 +176,7 @@ oddsratio(A, B; alpha=.05, exact=false) # todo
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/ORPRRR.jl#L1-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/ORPRRR.jl#L1-L29' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.removeMissing-Tuple{Any}' href='#Epi.removeMissing-Tuple{Any}'>#</a>
 <strong><code>Epi.removeMissing</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>removeMissing(A; cols=missing)
@@ -178,7 +185,7 @@ oddsratio(A, B; alpha=.05, exact=false) # todo
 
 <p>Removing missing values in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>. <code>A</code> can be <code>R x 1</code> as well.</p>
 <p>Return the modified <code>A</code>.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/Utils.jl#L15-L21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/Utils.jl#L15-L21' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.removeNaN-Tuple{Any}' href='#Epi.removeNaN-Tuple{Any}'>#</a>
 <strong><code>Epi.removeNaN</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>removeNaN(A; cols=missing)
@@ -187,7 +194,7 @@ oddsratio(A, B; alpha=.05, exact=false) # todo
 
 <p>Removing non number values (<code>NaN</code>) in an array <code>A</code>. By default remove all rows with missing values in <strong>any of the columns</strong>. Otherwise removing only missing data only in those columns specified by <code>cols</code>. <code>A</code> can be <code>R x 1</code> as well</p>
 <p>Return the modified <code>A</code>.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/Utils.jl#L42-L48' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/Utils.jl#L42-L48' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.riskratio-NTuple{4,Any}' href='#Epi.riskratio-NTuple{4,Any}'>#</a>
 <strong><code>Epi.riskratio</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>riskratio(a, b, c, d; alpha=.05)    
@@ -212,7 +219,7 @@ riskratio(A, B; alpha=.05, exact=false) # todo
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/ORPRRR.jl#L43-L71' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/ORPRRR.jl#L43-L71' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.unlist-Tuple{Any}' href='#Epi.unlist-Tuple{Any}'>#</a>
 <strong><code>Epi.unlist</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>unlist(A; unify=false)
@@ -221,14 +228,14 @@ riskratio(A, B; alpha=.05, exact=false) # todo
 
 <p>R's style 'unlist''. <code>A</code> can be a 1-dimensional array of arrays (the motivation of this function), or a 2-dimensional array (not tested exhaustively).</p>
 <p><code>unify=true</code> wraps the result in the <code>unique()</code> function before return.</p>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/Utils.jl#L29-L35' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/Utils.jl#L29-L35' class='documenter-source'>source</a><br></p>
 <p><a id='Epi.crossCount-Tuple{Any,Any,Any}' href='#Epi.crossCount-Tuple{Any,Any,Any}'>#</a>
 <strong><code>Epi.crossCount</code></strong> &mdash; <em>Method</em>.</p>
 <p>Function to count for a cross-table for Epi package.</p>
 <blockquote>
 <p>Internal</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/bcfd7a5c7c8e84706c6e47fe79f00d33cd60ece0/src/Utils.jl#L7-L10' class='documenter-source'>source</a><br></p></div>
+<p><a target='_blank' href='https://github.com/kklot/Epi.jl/blob/13498e5d98d028b318c1bd0ce7540afef250521c/src/Utils.jl#L7-L10' class='documenter-source'>source</a><br></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -312,5 +319,5 @@ riskratio(A, B; alpha=.05, exact=false) # todo
 
 <!--
 MkDocs version : 0.17.5
-Build Date UTC : 2018-09-30 23:40:30
+Build Date UTC : 2018-09-30 23:57:27
 -->
